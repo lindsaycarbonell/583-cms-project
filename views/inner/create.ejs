@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<% include ../templates/header %>
+
+<body>
+
+  <% include ../templates/nav %>
+
+        <!-- <h3 class="form-header"><i class="fa fa-pencil-square-o"></i> New Post</h3> -->
+
+        <hr>
+
+        <form action="/" method="POST">
+
+          <div class="row form-row">
+            <input onClick="this.select();" class="form-control" type="text" id="title" name="title" value="Title" />
+          </div>
+
+          <div class="row form-row">
+            <label>author</label>
+            <input class="form-control" type="text" id="author" name="author" value="" />
+          </div>
+
+          <div class="row form-row">
+            <label>content</label>
+            <textarea class="form-control" type="text" id="content" name="content" value="" required></textarea>
+          </div>
+
+          <div class="row form-row">
+            <label>category</label>
+            <select class="form-control" type="text" id="category" name="category" value="" required>
+              <option>Inspiration</option>
+              <option>Design</option>
+              <option>Home Interior</option>
+            </select>
+          </div>
+
+          <div class="row form-row">
+            <label>tags</label>
+            <input id="tokenfield" class="tokenfield form-control" type="text" id="tags" name="tags" value="" required />
+          </div>
+
+          <div class="row form-row">
+            <label>image URL</label>
+            <input class="form-control" type="text" id="thumbnail" name="thumbnail" value="" required />
+          </div>
+
+          <div class="row center-push-empty">
+            <div class="col-lg-3 col-sm-3"></div>
+            <div class="col-lg-6 col-sm-6">
+              <a href="/new"><button class="btn btn-large">Create Post</button></a>
+            </div>
+            <div class="col-lg-3 col-sm-3"></div>
+            </div>
+        </form>
+</div><!--/#main-container-->
+<% include ../templates/footer %>
+
+    </body>
+
+    <script>
+    $('#tokenfield').tokenfield({
+      autocomplete: {
+        source: [],
+        delay: 100
+      },
+      showAutocompleteOnFocus: true
+    });
+
+
+
+    </script>
+</html>

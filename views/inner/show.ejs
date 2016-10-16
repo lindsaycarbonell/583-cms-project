@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<% include ../templates/header %>
+    <body>
+
+
+      <% include ../templates/nav %>
+
+
+        <div class="thumb-box" style="text-align:center;">
+          <img src="<%= post.thumbnail %>" class="post-thumb" />
+        </div>
+
+
+              <h4 class="inner-title"><%= post.title %></h4>
+              <a class="update-button" href="/edit/<%= post._id %>">Edit this post</a>
+              <span class="slash"> | </span>
+              <a class="delete-button" href="/posts/delete/<%= post._id %>">Delete this post</a>
+
+              <h5 class="meta-author"><%= post.author %></h5>
+              <p class="inner-content"><%= post.content %></p>
+
+    </div>
+    <% include ../templates/footer %>
+
+    </body>
+</html>

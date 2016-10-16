@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <% include ../templates/header %>
+    <body>
+
+      <% include ../templates/nav %>
+
+      <!-- <div class="row center-push">
+        <div class="col-lg-3 col-sm-3"></div>
+        <div class="col-lg-6 col-sm-6">
+          <a href="/new"><button class="btn btn-large" style="float:right;">Create a post</button></a>
+        </div>
+        <div class="col-lg-3 col-sm-3"></div>
+      </div> -->
+  <hr>
+
+        <% if (posts.length) { %>
+        <!-- <ul> -->
+            <% for (var i in posts) { %>
+
+            <div class="post-box">
+              <div class="thumb-box">
+                <img src="<%= posts[i].thumbnail %>" class="post-thumb" />
+              </div>
+
+              <a href="/posts/<%= posts[i]._id %>"><h4 class="meta-title"><%= posts[i].title %></h4></a>
+              <div class="row rmv-marg-left">
+
+                  <h5 class="meta-author"><%= posts[i].author %></h5>
+
+              </div>
+
+
+              <p class="meta-content"><%= posts[i].content %></p>
+              <span class="meta-bottom">
+                <i class="fa fa-clock-o"></i> <%= posts[i].date %>
+                <span class="bottom-tagged"><i class="fa fa-file-text-o"></i>
+categorized in <%= posts[i].category %></span>
+
+                <span class="bottom-tagged"><i class="fa fa-tag"></i> tagged in <%= posts[i].tags %></span>
+              </span>
+
+            </div>
+
+            <hr style="margin-top:80px;">
+
+            <!-- <li><a href="/posts/<%= posts[i].title %>"><%= posts[i].title %></a></li> -->
+            <% } %>
+        <!-- </ul> -->
+        <% } else { %>
+          <div class="row center-push-empty">
+            <div class="col-lg-3 col-sm-3"></div>
+            <div class="col-lg-6 col-sm-6">
+              <p class="medium-p">Oops! We didn't find any posts here.</p>
+              <a href="/new"><button class="btn btn-large">Create a post</button></a>
+            </div>
+            <div class="col-lg-3 col-sm-3"></div>
+            </div>
+
+        <% } %>
+
+    </div><!--#main-container-->
+
+    <% include ../templates/footer %>
+
+    </body>
+</html>
